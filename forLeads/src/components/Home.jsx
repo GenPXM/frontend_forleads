@@ -1,5 +1,6 @@
 import React from "react";
 import { Carousel } from "flowbite-react";
+import { Link } from "react-router-dom"; // Importa o Link para navegação
 import banner1 from "../assets/banner1.jpg";
 
 const Home = () => {
@@ -29,7 +30,12 @@ const Home = () => {
 							<p className="text-neutralGrey text-base mb-8">
 								Gerenciamos os Leads para sua empresa.
 							</p>
-							<button className="btn-primary">Cadastre-se</button>
+							<Link
+								to="/register" // Direciona para a página de registro
+								className="btn-primary transition-all duration-300 bg-brandPrimary text-white py-2 px-4 rounded hover:bg-neutralDGrey"
+							>
+								Cadastre-se
+							</Link>
 						</div>
 					</div>
 					<div className="my-28 md:my-8 py-12 flex flex-col md:flex-row-reverse items-center justify-between gap-12">
@@ -51,7 +57,12 @@ const Home = () => {
 							<p className="text-neutralGrey text-base mb-8">
 								Gerenciamos os Leads para sua empresa.
 							</p>
-							<button className="btn-primary">Cadastre-se</button>
+							<Link
+								to="/register" // Direciona para a página de registro
+								className="btn-primary transition-all duration-300 bg-brandPrimary text-white py-2 px-4 rounded hover:bg-neutralDGrey"
+							>
+								Cadastre-se
+							</Link>
 						</div>
 					</div>
 					<div className="my-28 md:my-8 py-12 flex flex-col md:flex-row-reverse items-center justify-between gap-12">
@@ -73,7 +84,12 @@ const Home = () => {
 							<p className="text-neutralGrey text-base mb-8">
 								Gerenciamos os Leads para sua empresa.
 							</p>
-							<button className="btn-primary">Cadastre-se</button>
+							<Link
+								to="/register" // Direciona para a página de registro
+								className="btn-primary transition-all duration-300 bg-brandPrimary text-white py-2 px-4 rounded hover:bg-neutralDGrey"
+							>
+								Cadastre-se
+							</Link>
 						</div>
 					</div>
 				</Carousel>
