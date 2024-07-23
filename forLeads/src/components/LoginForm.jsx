@@ -6,7 +6,7 @@ const LoginForm = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		// Aqui você pode adicionar a lógica para autenticação
+
 		console.log("CPF:", cpf);
 		console.log("Senha:", password);
 	};

@@ -22,24 +22,42 @@ const Services = () => {
 		},
 	];
 	return (
-		<div className="md: px-14 px-4 y-16 max-w-screen-2xl mx-auto" id="service">
+		<div className="md:px-14 px-4 py-16 max-w-screen-2xl mx-auto" id="service">
 			<div className="text-center my-8">
 				<h2 className="text-4xl text-neutralDGrey font-semibold mb-2">
 					Nossos Clientes
 				</h2>
-				<p className="text-neutralGrey">Alguns de nossos Parceiros!</p>
+				<p className="text-neutralGrey text-xl ">Alguns de nossos Parceiros!</p>
 				<div className="my-12 flex flex-wrap justify-between items-center gap-8">
-					<img src="./src/assets/icons/cliente1.png" alt="" />
-					<img src="./src/assets/icons/cliente2.png" alt="" />
-					<img src="./src/assets/icons/cliente3.png" alt="" />
-					<img src="./src/assets/icons/cliente4.png" alt="" />
+					<img
+						src="./src/assets/icons/empresa1.jpg"
+						alt=""
+						className="w-40 h-40"
+					/>
+					<img
+						src="./src/assets/icons/empresa2.jpg"
+						alt=""
+						className="w-40 h-40"
+					/>
+					<img
+						src="./src/assets/icons/empresa3.jpg"
+						alt=""
+						className="w-40 h-40"
+					/>
+					<img
+						src="./src/assets/icons/empresa1.jpg"
+						alt=""
+						className="w-40 h-40"
+					/>
 				</div>
 			</div>
 			<div className="mt-20 md:w-1/2 mx-auto text-center">
 				<h2 className="text-4xl text-neutralDGrey font-semibold mb-3">
 					Gerencie todos os seus Leads em um só sistema.
 				</h2>
-				<p className="text-neutralGrey">Para quem o ForLeads é recomendado?</p>
+				<p className="text-neutralGrey text-xl">
+					Para quem o ForLeads é recomendado?
+				</p>
 			</div>
 			<div className="mt-14 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:w-11/12 mx-auto gap-12">
 				{services.map((service) => (
@@ -50,8 +68,12 @@ const Services = () => {
 						flex items-center justify-center h-full"
 					>
 						<div>
-							<div className="bg-[#e8f5e9] mb-4 h-14 w-14 mx-auto rounded-tl-3xl rounded-br-3xl">
-								<img src={service.image} alt="" className="-ml-5" />
+							<div className="bg-[#e8f5e9] mb-4 h-20 w-20 mx-auto rounded-tl-3xl rounded-br-3xl">
+								<img
+									src={service.image}
+									alt=""
+									className="w-15 h-15 object-contain"
+								/>
 							</div>
 							<h4 className="text-2xl font-bold text-neutralDGrey mb-2 px-2 ">
 								{service.title}

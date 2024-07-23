@@ -9,7 +9,6 @@ export const fetchLeads = async () => {
 			"https://localhost:44369/Leads/listarLeads"
 		);
 		if (response.data.codigo === 200) {
-			// Retorna a lista de leads da resposta
 			return response.data.retorno;
 		} else {
 			throw new Error(response.data.resposta || "Erro ao buscar leads");
@@ -19,6 +18,30 @@ export const fetchLeads = async () => {
 		throw error;
 	}
 };
+export const verificarCpf = async (cpf) => {
+	try {
+		const response = await fetch(
+			`https://localhost:44369/Leads/verificarCpfLeads?cpf=${cpf}`,
+			{
+				method: "GET",
+				headers: {
+					"Content-Type": "application/json",
+					...getAuthHeaders(),
+				},
+			}
+		);
+		const data = await response.json();
+
+		return {
+			existe: data.codigo === 640,
+			mensagem: data.resposta,
+		};
+	} catch (error) {
+		console.error("Failed to verify CPF:", error);
+		return { existe: false, mensagem: "Erro ao verificar CPF" };
+	}
+};
+
 export const createLead = async (lead) => {
 	try {
 		const response = await fetch(
@@ -32,9 +55,19 @@ export const createLead = async (lead) => {
 				body: JSON.stringify(lead),
 			}
 		);
-		return await response.json();
+		const result = await response.json();
+
+		if (response.ok && result.codigo === 200) {
+			return { sucesso: true, mensagem: result.resposta };
+		} else {
+			return {
+				sucesso: false,
+				mensagem: result.resposta || "Erro ao criar lead",
+			};
+		}
 	} catch (error) {
 		console.error("Failed to create lead:", error);
+		return { sucesso: false, mensagem: "Erro ao criar lead" };
 	}
 };
 
@@ -61,7 +94,7 @@ export const updateLead = async (id, leadData) => {
 		}
 	);
 	if (!response.ok) {
-		const errorText = await response.text(); // Ler o texto da resposta de erro
+		const errorText = await response.text();
 		throw new Error(`Failed to update lead: ${errorText}`);
 	}
 	return response.json();

@@ -1,6 +1,6 @@
 import React from "react";
 import { Carousel } from "flowbite-react";
-import { Link } from "react-router-dom"; // Importa o Link para navegação
+import { Link } from "react-router-dom";
 import banner1 from "../assets/banner1.jpg";
 
 const Home = () => {
@@ -27,12 +27,12 @@ const Home = () => {
 									mais de 15 anos
 								</span>
 							</h1>
-							<p className="text-neutralGrey text-base mb-8">
+							<p className="text-neutralGrey text-xl mb-8">
 								Gerenciamos os Leads para sua empresa.
 							</p>
 							<Link
-								to="/register" // Direciona para a página de registro
-								className="btn-primary transition-all duration-300 bg-brandPrimary text-white py-2 px-4 rounded hover:bg-neutralDGrey"
+								to="/register"
+								className="btn-primary text-xl transition-all duration-300 bg-brandPrimary text-white py-2 px-4 rounded hover:bg-neutralDGrey"
 							>
 								Cadastre-se
 							</Link>
@@ -54,12 +54,12 @@ const Home = () => {
 									mais de 15 anos
 								</span>
 							</h1>
-							<p className="text-neutralGrey text-base mb-8">
+							<p className="text-neutralGrey  text-xl mb-8">
 								Gerenciamos os Leads para sua empresa.
 							</p>
 							<Link
-								to="/register" // Direciona para a página de registro
-								className="btn-primary transition-all duration-300 bg-brandPrimary text-white py-2 px-4 rounded hover:bg-neutralDGrey"
+								to="/register"
+								className="btn-primary text-xl transition-all duration-300 bg-brandPrimary text-white py-2 px-4 rounded hover:bg-neutralDGrey"
 							>
 								Cadastre-se
 							</Link>
@@ -81,12 +81,12 @@ const Home = () => {
 									mais de 15 anos
 								</span>
 							</h1>
-							<p className="text-neutralGrey text-base mb-8">
+							<p className="text-neutralGrey text-xl mb-8">
 								Gerenciamos os Leads para sua empresa.
 							</p>
 							<Link
-								to="/register" // Direciona para a página de registro
-								className="btn-primary transition-all duration-300 bg-brandPrimary text-white py-2 px-4 rounded hover:bg-neutralDGrey"
+								to="/register"
+								className="btn-primary text-xl  transition-all duration-300 bg-brandPrimary text-white py-2 px-4 rounded hover:bg-neutralDGrey"
 							>
 								Cadastre-se
 							</Link>

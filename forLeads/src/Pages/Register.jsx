@@ -8,7 +8,7 @@ const SignUp = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
-	const [role, setRole] = useState(1); // Default role
+	const [role, setRole] = useState(1);
 	const [error, setError] = useState("");
 	const [loading, setLoading] = useState(false);
 	const navigate = useNavigate();
@@ -31,15 +31,14 @@ const SignUp = () => {
 
 		try {
 			const response = await axios.post(
-				"https://localhost:44369/Autenticacao/cadastrar", // Atualize o endpoint conforme necessário
+				"https://localhost:44369/Autenticacao/cadastrar",
 				userData
 			);
 
 			console.log("API response:", response.data);
 
 			if (response.data.codigo === 200) {
-				// Check if the response code is 200
-				navigate("/login"); // Redirect to login or another page
+				navigate("/login");
 			} else {
 				setError(response.data.mensagem || "Registration failed");
 			}
@@ -53,14 +52,14 @@ const SignUp = () => {
 	return (
 		<div className="flex justify-center items-center min-h-screen bg-gray-100">
 			<div className="bg-white p-6 rounded-lg shadow-md max-w-sm w-full">
-				<h2 className="text-2xl font-bold mb-4">Sign Up</h2>
+				<h2 className="text-2xl font-bold mb-4">Cadastro de Usuário</h2>
 				<form onSubmit={handleSubmit}>
 					<div className="mb-4">
 						<label
 							htmlFor="username"
-							className="block text-sm font-medium text-gray-700"
+							className="block text-xl font-medium text-gray-700"
 						>
-							Username
+							Nome
 						</label>
 						<input
 							type="text"
@@ -74,7 +73,7 @@ const SignUp = () => {
 					<div className="mb-4">
 						<label
 							htmlFor="cpf"
-							className="block text-sm font-medium text-gray-700"
+							className="block text-xl font-medium text-gray-700"
 						>
 							CPF
 						</label>
@@ -90,7 +89,7 @@ const SignUp = () => {
 					<div className="mb-4">
 						<label
 							htmlFor="email"
-							className="block text-sm font-medium text-gray-700"
+							className="block text-xl font-medium text-gray-700"
 						>
 							Email
 						</label>
@@ -106,9 +105,9 @@ const SignUp = () => {
 					<div className="mb-4">
 						<label
 							htmlFor="password"
-							className="block text-sm font-medium text-gray-700"
+							className="block text-xl font-medium text-gray-700"
 						>
-							Password
+							Senha
 						</label>
 						<input
 							type="password"
@@ -122,9 +121,9 @@ const SignUp = () => {
 					<div className="mb-4">
 						<label
 							htmlFor="confirmPassword"
-							className="block text-sm font-medium text-gray-700"
+							className="block text-xl font-medium text-gray-700"
 						>
-							Confirm Password
+							Confirme a senha
 						</label>
 						<input
 							type="password"
@@ -138,9 +137,9 @@ const SignUp = () => {
 					<div className="mb-4">
 						<label
 							htmlFor="role"
-							className="block text-sm font-medium text-gray-700"
+							className="block text-xl font-medium text-gray-700"
 						>
-							Role
+							Administrador
 						</label>
 						<select
 							id="role"
@@ -151,7 +150,7 @@ const SignUp = () => {
 						>
 							<option value={1}>Admin Master</option>
 							<option value={2}>Gestor</option>
-							<option value={3}>Leads</option>
+							{/* <option value={3}>Leads</option> */}
 						</select>
 					</div>
 					{error && <p className="text-red-500 text-sm mb-4">{error}</p>}

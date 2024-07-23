@@ -1,12 +1,8 @@
-// src/contexts/AuthContext.jsx
-
 import React, { createContext, useState, useContext } from "react";
 import PropTypes from "prop-types";
 
-// Contexto de Autenticação
 const AuthContext = createContext();
 
-// Provedor do Contexto de Autenticação
 export const AuthProvider = ({ children }) => {
 	const [token, setToken] = useState(localStorage.getItem("authToken") || "");
 
@@ -27,10 +23,8 @@ export const AuthProvider = ({ children }) => {
 	);
 };
 
-// Validação de Propriedades
 AuthProvider.propTypes = {
 	children: PropTypes.node.isRequired,
 };
 
-// Hook para usar o contexto de autenticação
 export const useAuth = () => useContext(AuthContext);
